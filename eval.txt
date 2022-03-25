@@ -1,0 +1,35 @@
+Results for the extraLargeArray
+doubler insert 610.5359 ms
+doubler append 2.4434 ms
+
+Results for the largeArray
+insert 6.2697 ms
+append 364.1 μs
+
+Results for the mediumArray
+insert 135.9 μs
+append 101.4 μs
+
+Results for the smallArray
+insert 38.5 μs
+append 70.8 μs
+
+Results for the tinyArray
+insert 29.1 μs
+append 66.1 μs
+
+    The functions scales off depending on how many numbers are in an array. Looking at the result of
+each functions runtimes the function doublerInsert using .push() array method is a lot slower than using
+.unshift() method when a array has large amount of items, while doublerAppend runs slower when there are 
+smaller amount of items in an array. This shows that doublerInsert function is better function for running
+smaller scale tests and doublerAppend function will be better at handling large scale of work seeing the 
+runtime comparison of each functions.
+
+    The default Complexity of push() is O(1) and unshift() is O(n). Because unshift() has to increment all 
+the elements that already present in the Array. But, push() has to insert an element at the end of the array, 
+so none of the Array elements' index has to change, But push() can also be said with Complexity of O(n) 
+because of dynamic allocation of memory. In javascript, when you create a new Array without specifying the size you need, 
+it will create an Array of the default value. Until the default size gets filled, the push operation takes O(1) Complexity. 
+But, if the default size is full, the compiler has to create a new Contiguous block of memory 
+which is twice the size of the default memory, and copy the already existing elements to the newly allocated memory. 
+So, it takes O(n) time to move the elements from one Contiguous block of memory to another Contiguous block of memory.
